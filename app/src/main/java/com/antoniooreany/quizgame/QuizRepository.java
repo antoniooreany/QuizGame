@@ -2,26 +2,25 @@ package com.antoniooreany.quizgame;
 
 import java.util.Random;
 
-public class QuizRepository {
+class QuizRepository {
 
     private Quiz[] quizzes;
 
-    public QuizRepository() {
-        Quiz quiz0 = new Quiz("How many people live in Mars?", new String[]{"0", "1", "2", "3"}, 0);
-        Quiz quiz1 = new Quiz("How many dogs live in Mars?", new String[]{"0", "1", "2", "3"}, 0);
-        Quiz quiz2 = new Quiz("How many cats live in Mars?", new String[]{"0", "1", "2", "3"}, 0);
-        Quiz quiz3 = new Quiz("How many mice live in Mars?", new String[]{"0", "1", "2", "3"}, 0);
-        quizzes = new Quiz[]{quiz0, quiz1, quiz2, quiz3};
+    private static int answersNumber; //TODO trying to not hardcode ANSWERS_NUMBER in MainActivity
+
+    QuizRepository() {
+        quizzes = new Quiz[]{
+                new Quiz("How many people live in Mars? (Correct answer: 0)", new String[]{"0", "1", "2", "3"}, 0),
+                new Quiz("How many dogs live in Mars? (Correct answer: 1)", new String[]{"0", "1", "2", "3"}, 1),
+                new Quiz("How many dogs live in Mars? (Correct answer: 1)", new String[]{"0", "1", "2", "3"}, 1),
+                new Quiz("How many mice live in Mars? (Correct answer: 3)", new String[]{"0", "1", "2", "3"}, 3)
+        };
+        answersNumber = quizzes[0].getAnswers().length; //TODO trying to not hardcode ANSWERS_NUMBER in MainActivity
     }
 
-    public Quiz[] getQuizzes() {
-        return quizzes;
-    }
-
-    public Quiz randomQuiz() {
+    Quiz randomQuiz() {
         Random random = new Random();
         int i = random.nextInt(quizzes.length);
         return quizzes[i];
-
     }
 }

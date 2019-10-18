@@ -1,6 +1,6 @@
 package com.antoniooreany.quizgame;
 
-public class Quiz {
+class Quiz {
 
     private String question;
 
@@ -8,21 +8,21 @@ public class Quiz {
 
     private int correctAnswerIndex;
 
-    public Quiz(String question, String[] answers, int correctAnswerIndex) {
+    Quiz(String question, String[] answers, int correctAnswerIndex) {
         this.question = question;
         this.answers = answers;
         this.correctAnswerIndex = correctAnswerIndex;
     }
 
-    public String[] getAnswers() {
+    String[] getAnswers() {
         return answers;
     }
 
-    public String getQuestion() {
+    String getQuestion() {
         return question;
     }
 
-    public String getCorrectAnswer() {
+    String getCorrectAnswer() {
         return answers[correctAnswerIndex];
     }
 }
