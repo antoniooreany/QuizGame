@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
     private QuizRepository quizRepository;
     private Quiz quiz;
 
+    /**
+     *
+     * @param savedInstanceState inherited parameter
+     * executes when application is created
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         setOnClickListeners();
     }
 
+    /**
+     *
+     * @param quizRepository is a quiz repository, from which take some random quiz for putting the quiz data into UI
+     */
     private void randomQuestionInit(QuizRepository quizRepository) {
         quiz = quizRepository.randomQuiz();
 
@@ -41,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 
+     * sets an onClickListeners for the buttons
+     */
     private void setOnClickListeners() {
         for (int i = 0; i < /*quiz.getAnswers().length*/ buttons.length; i++) {
             final int finalI = i;
