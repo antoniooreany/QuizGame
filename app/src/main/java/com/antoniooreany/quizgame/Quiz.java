@@ -9,9 +9,8 @@ class Quiz {
     private int correctAnswerIndex;
 
     /**
-     *
-     * @param question is a question to answer
-     * @param answers is an array of possible answers
+     * @param question           is a question to answer
+     * @param answers            is an array of possible answers
      * @param correctAnswerIndex is the only one correct answer
      */
     Quiz(String question, String[] answers, int correctAnswerIndex) {
@@ -21,7 +20,6 @@ class Quiz {
     }
 
     /**
-     *
      * @return an array of possible answers
      */
     String[] getAnswers() {
@@ -29,7 +27,6 @@ class Quiz {
     }
 
     /**
-     *
      * @return the question
      */
     String getQuestion() {
@@ -37,7 +34,6 @@ class Quiz {
     }
 
     /**
-     *
      * @return a correct answer
      */
     String getCorrectAnswer() {
